@@ -59,17 +59,15 @@ body {
   left: 50%;
   /* translate is for the element itself  */
   transform: translate(-50%, -50%);
-  display: flex;
+  text-align: center;
+
+  /* you can achieve to center everything into the text-box by using the flex box */
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
-.text-box button {
-  padding: 10px 30px;
-  text-transform: uppercase;
-  border-radius: 20px;
-}
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
@@ -146,4 +144,32 @@ first:
     opacity: 1;
     transform: translate(0);
   }
+}
+
+/* link is pseudo selector? is it just a keyword that add to the selected element after the: 
+it specifies the state of the selected element  */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+
+  /* transition enables us to specify which property we want the element to have been animated 
+  and sometimes the animation would be applied to every property so we choose all
+  */
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(-1px);
+}
+.btn-white {
+  background: #fff;
+  color: #777;
 }
