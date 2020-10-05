@@ -145,6 +145,17 @@ first:
     transform: translate(0);
   }
 }
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    /* because we want to move the bottom from down */
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 
 /* link is pseudo selector? is it just a keyword that add to the selected element after the: 
 it specifies the state of the selected element  */
@@ -155,11 +166,13 @@ it specifies the state of the selected element  */
   padding: 15px 40px;
   display: inline-block;
   border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+  margin-top: 20px;
 
   /* transition enables us to specify which property we want the element to have been animated 
   and sometimes the animation would be applied to every property so we choose all
   */
-  transition: all 0.2s;
 }
 
 .btn:hover {
@@ -172,4 +185,31 @@ it specifies the state of the selected element  */
 .btn-white {
   background: #fff;
   color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4;
+}
+
+.btn-white::after {
+  background-color: white;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
 }
