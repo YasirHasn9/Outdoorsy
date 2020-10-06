@@ -34,3 +34,91 @@ background-color:red
 
 this --> background-color:blue !important
 because the !important, which it gets property precedence
+
+## How can css determine which value get to be precedent ?
+
+it determines this through specificity, which means the rule that would apply depends on the order (which property or selector to be preceded )
+
+1. inline
+2. ids
+3. class , pseudo class , attribute
+4. element and pseudo elements
+
+# using the !important in your style overrides even the inline style and cant be overridden unless another property been specified with another !important
+
+## How to calculate the specificity of css ?
+
+inline , id , classes/pseudo classes , element = (0 , 0 , 0 , 0)
+
+.button {
+....
+} = (0 , 0 , 1 , 0)
+
+nav#nav div.pull-right .button {
+....
+} = (0 , 1 , 2 , 2) we have 2 classes(pull-right and button ) and 2 elements (nav and div)
+
+a {
+...
+} = (0 , 0 , 0 , 1)
+
+#nav a.button:hover {
+...
+} = (0 , 1 , 2 because we have 1 for class .button and the hover pseudo class)
+
+**_ note _**
+rely on specificity more than the order unless we are using a third party lib
+
+#How css values are processed?
+you need to know the 6 steps
+
+1. Declared value which is usually written by the author
+2. cascaded value; order
+3. specified value ; defaulting value if there is no cascaded value
+4. computed value where the engine converts the relative values to absolute
+5. used value: final calculations based on layout
+6. actual value which is the browser and device restrictions
+
+#example
+
+html
+
+<div class="box">
+   <p class="sub-box"> something here </p>
+</div>
+
+style
+.box {
+width:280px;
+font-size: 1.5rem;
+background-color:green;
+}
+
+p {
+width:140px;
+background-color:red
+}
+
+.sub-box {
+width:140px;
+}
+
+p and sub-box have some conflicts on the width
+which one should be applied
+
+1. Declared value
+   140px;
+   80%
+   which value gets to be cascaded ?
+
+2. cascaded value is 80% because the class has more powerful and more specified than the p
+
+3. specified value which is the initial value in case there is no value but here we have the 80%
+
+4. computed value which transform the value to its pixels
+
+5. used value --> final calculation
+   80% X 280px == 224 px
+
+6. actual value
+   224px submits to the restrictions of the browser and it may be 223px or 224px
