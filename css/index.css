@@ -4,6 +4,7 @@ medium green: #55c57a
 Dark green: #28b485  */
 
 * {
+  /* * has (0,0,0,0) specificity which all other elements has precedence over it */
   margin: 0;
   padding: 0;
   /* padding and border are no longer added to total width and height 

@@ -112,13 +112,35 @@ which one should be applied
    which value gets to be cascaded ?
 
 2. cascaded value is 80% because the class has more powerful and more specified than the p
+   and the cascaded value of the browser is 16px or 1.5 rem
+   and this would the specified value of there is no value
 
 3. specified value which is the initial value in case there is no value but here we have the 80%
 
 4. computed value which transform the value to its pixels
+
+the computed font-size to section is 24px ?
+because rem = 1.5 \* 16px = 24px
 
 5. used value --> final calculation
    80% X 280px == 224 px
 
 6. actual value
    224px submits to the restrictions of the browser and it may be 223px or 224px
+
+# what do you need to know
+
+1. each property has an initial value if there is no value specified.
+2. percentage and relative value are converted to pixels.
+3. the browser specify the root's font-size and usually is 16px
+4. percentage are measured relative to their parent's font-size, if used to specify font-size.
+5. percentage are measured relative to parent's width , if used to specify length.
+6. em are measured relative to their parent's font-size, if used to specify font-size.
+7. em are measured relative to their current element's font-size, if used to specify length.
+8. rem is always measured to the document's root font-size.
+9. vh and vw are percentage measured to viewport of the browser.
+
+### why would we want to size stuff using em or rem ?
+
+because we can build a robust responsive layout that we can change the length of of elements by changing the font-size
+and this adds a lot of flexibility.
