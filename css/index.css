@@ -3,13 +3,38 @@ Light green :#7ed56f
 medium green: #55c57a
 Dark green: #28b485  */
 
-* {
+*,
+/* this will apply for pseudo elements */
+*::after,
+*::before {
   /* * has (0,0,0,0) specificity which all other elements has precedence over it */
   margin: 0;
   padding: 0;
   /* padding and border are no longer added to total width and height 
   to the specified box module */
-  box-sizing: border-box;
+  /* box-sizing: border-box; put in the body instead of here ? */
+  box-sizing: inherit;
+  /* this will inherit everything from the body  */
+}
+
+html {
+  /* we are gonna convert px to relative rem values ?
+  because we need easy why to change all the measurement 
+  on our page with one simple sitting
+
+   */
+  /* we make it 10 px because now we know that 1 rem = 10px 
+   this is gonna make our life easier .plus, remember that the measure
+    of rem rely of the root's font-size. also if it was a 16px we would do 
+    a lot of calculation.
+   */
+  /* font-size: 10px; */
+  /* once you converted everything pixel to rem, go inspect the page and play with and you'll see the magic of rem */
+  font-size: 62.5%;
+  /* i converted to percentage to i wont give a headache to the 
+  client when they resize the screen. imagine if it was 10px so the client and even the browser will be stuck 
+  at it by giving it the 62.5% it makes more flexible 
+  10px/16px = 62.5% */
 }
 
 body {
@@ -18,10 +43,13 @@ body {
     this is why are putting it in the body tag  */
   font-family: Lato, "sans-serif";
   font-weight: 400;
-  font-size: 16px;
+
+  /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  padding: 3rem /* it was 30px*/;
+  /* we should take advantage of the inheritance  */
+  box-sizing: border-box;
 }
 
 .header {
@@ -41,16 +69,17 @@ body {
     /*bottom left*/ 100% 75vh,
     /*bottom right*/ 0 100%
   );
-  position: relative;
+  /* position: relative; */
 }
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  /* rem is measured relative to the document's root font-sie */
+  top: 4rem;
+  left: 4rem;
 }
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 .text-box {
   position: absolute;
@@ -72,14 +101,15 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 2rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
-
+  letter-spacing: 3.5rem;
   /* animation */
   animation-name: moveInLeft;
   animation-duration: 1s;
@@ -95,15 +125,15 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 17.4px;
-  margin-bottom: 20px;
+  letter-spacing: 1.74rem;
+  margin-bottom: 2rem;
   /* animation-name: moveInRight;
   animation-duration: 3s; */
   animation: moveInRight 1s ease-out;
   /* determines the back part of the an element is visible or hidden */
-  backface-visibility: hidden;
+  /* backface-visibility: hidden; */
 }
 
 /* there are 2 ways for doing animation in css 
@@ -121,10 +151,10 @@ first:
   0% {
     opacity: 0;
     /* the translate goes form the right to left on the X's */
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80% {
-    transform: translate(10px);
+    transform: translate(1rem);
   }
   100% {
     opacity: 1;
@@ -136,10 +166,10 @@ first:
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
   80% {
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
   100% {
     opacity: 1;
@@ -150,7 +180,7 @@ first:
   0% {
     opacity: 0;
     /* because we want to move the bottom from down */
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
   100% {
     opacity: 1;
@@ -164,12 +194,13 @@ it specifies the state of the selected element  */
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
   display: inline-block;
-  border-radius: 100px;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
-  margin-top: 20px;
+  margin-top: 2rem;
+  font-size: 1.6rem;
 
   /* transition enables us to specify which property we want the element to have been animated 
   and sometimes the animation would be applied to every property so we choose all
@@ -177,11 +208,12 @@ it specifies the state of the selected element  */
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .btn:active {
-  transform: translateY(-1px);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
 .btn-white {
   background: #fff;
@@ -193,12 +225,12 @@ it specifies the state of the selected element  */
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all 0.4;
+  transition: all 0.4s;
 }
 
 .btn-white::after {

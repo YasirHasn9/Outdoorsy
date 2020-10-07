@@ -144,3 +144,7 @@ because rem = 1.5 \* 16px = 24px
 
 because we can build a robust responsive layout that we can change the length of of elements by changing the font-size
 and this adds a lot of flexibility.
+
+**_ note _**
+always remember that every property must have a value even if neither we , the developer nor the browser do specify
+so in that case there is no cascaded property.
