@@ -1,4 +1,13 @@
+// since we are converting to sass now we can use its feature here
+
+// variables : we can use them wherever we want by just use t
+// the name that we are giving to them
+$color-primary: #7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+
 *,
+/* this will apply for pseudo elements */
 *::after,
 *::before {
   /* * has (0,0,0,0) specificity which all other elements has precedence over it */
@@ -37,10 +46,11 @@ body {
     this is why are putting it in the body tag  */
   font-family: Lato, "sans-serif";
   font-weight: 400;
+
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
+  padding: 3rem /* it was 30px*/;
   /* we should take advantage of the inheritance
    box-sizing: border-box; will include the padding and the border within the 
    height and the width  */
@@ -54,10 +64,13 @@ body {
   the linear-gradient goes on the top 
   and the img goes on the bottom
    */
+
+  // in regular css we cant use hexadecimal color with rgba
+  //   and then opacity but with sass we can do this
   background-image: linear-gradient(
       to right bottom,
-      rgba(85, 197, 122, 0.8),
-      rgba(40, 180, 133, 0.8)
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
     ),
     url("../img/hero.jpg");
   /* it always try to fit the element inside the box */
@@ -65,7 +78,13 @@ body {
   /* when resize the img the top img still the same but the bottom of it gets
   slightly chopped */
   background-position: top;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0 100%);
+
+  clip-path: polygon(
+    /* top left */ 0% 0%,
+    /* top right */ 100% 0%,
+    /*bottom left*/ 100% 75vh,
+    /*bottom right*/ 0 100%
+  );
   /* position: relative; */
 }
 
@@ -75,19 +94,19 @@ body {
   top: 4rem;
   left: 4rem;
 }
-
 .header__logo {
   height: 3.5rem;
 }
-
 .header__text-box {
   position: absolute;
+
   /* these properties are for the parent element */
   top: 40%;
   left: 50%;
   /* translate is for the element itself  */
   transform: translate(-50%, -50%);
   text-align: center;
+
   /* you can achieve to center everything into the text-box by using the flex box */
   /* display: flex;
   flex-direction: column;
@@ -112,8 +131,10 @@ body {
   animation-duration: 1s;
   /* animation-iteration-count: 2; determine hom times we want the animation what them to be */
   /* animation-delay: 2s; how long we want the client wait for the animation to be rendered */
+
   /* starts slower and ends faster  */
   /* animation-timing-function: ease-in; */
+
   /* starts faster and ends slower */
   animation-timing-function: ease-out;
 }
@@ -141,6 +162,7 @@ first:
     we can use the @keyframes and inside it , we can use the percentage
     of px to play when to apply the animation
 */
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -170,7 +192,6 @@ first:
     transform: translate(0);
   }
 }
-
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -196,6 +217,7 @@ it specifies the state of the selected element  */
   position: relative;
   margin-top: 2rem;
   font-size: 1.6rem;
+
   /* transition enables us to specify which property we want the element to have been animated 
   and sometimes the animation would be applied to every property so we choose all
   */
@@ -205,12 +227,10 @@ it specifies the state of the selected element  */
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
 .btn--white {
   background: #fff;
   color: #777;
