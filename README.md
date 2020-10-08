@@ -148,3 +148,66 @@ and this adds a lot of flexibility.
 **_ note _**
 always remember that every property must have a value even if neither we , the developer nor the browser do specify
 so in that case there is no cascaded property.
+
+# Think about the layout
+
+components should be
+a. modular
+b. reusable
+c. independent
+
+for easy debugging and maintains we should divide our app for several component . that would help us to easily spot the error and also save us time for the future growth.
+
+BEM = block element modifier
+
+Architect
+we are going to use the method of the 7-1 pattern, which is gonna use different css file for each portion of our app and at the end we are gonna make main file to import all other files into a compiled css stylesheet
+
+7 folders
+base/ basic product definition
+components/ one file for each component
+layout/ define the overall layout of the project
+abstracts/ variables and mix-ins , not out put
+vendors/ third party
+themes/ in case we want to visual different themes
+pages/ style for specific page of the project
+
+# now we are gonna use sass
+
+sass is just an extension to css (preprocessor) to play with sass you need a complier to translate(compile) a sass code to the real css under the hood
+and also you need you know how to play with npm
+
+# so what is Sass ?
+
+sass is a css preprocessor, an extension that adds elegance and power to the css
+
+sass code ----> |**_compiler_**| =) compiled css code
+
+so we are using sass to fix the problems that we have with css because css gets messy very quickly.
+
+sass provide for us a handy tools that css simply dont have
+
+so we are gonna write sass code instead of css code in sass file extension
+
+first: we need to process our sass code in a processor before we compile it a real css code and this is why we called preprocessor
+
+**_ note _**
+the browser has no idea that we are using the sass code because the browser sees only the final code which is the css
+
+what feature that sass will provide for us ?
+
+1. variables : you can use them for colors , font-sizes and other
+2. Nesting : you can nest elements inside other
+3. operators: math
+4. Partials and import: write sass code in one file and you can use in different file by importing them
+5. mixins : you can write reusable css code
+6. function : similar to mixins with the difference that they can produce value can be used
+7. extends: to make different selectors inherit declaration that they are common
+
+# how to declare a variable ?
+
+\$var-name : value;
+
+using semicolon (;) in sass is important
+
+**_ ampersand = & _**
