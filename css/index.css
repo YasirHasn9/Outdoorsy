@@ -18,7 +18,7 @@ Dark green: #28b485  */
 }
 
 html {
-  /* we are gonna convert px to relative rem values ?
+  /* we are gonna convert px to relative rem v alues ?
   because we need easy why to change all the measurement 
   on our page with one simple sitting
 
@@ -48,12 +48,15 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem /* it was 30px*/;
-  /* we should take advantage of the inheritance  */
+  /* we should take advantage of the inheritance
+   box-sizing: border-box; will include the padding and the border within the 
+   height and the width  */
   box-sizing: border-box;
 }
 
 .header {
   height: 95vh;
+  width: 100%;
   /* the linear-gradient goes on the top and the img goes on the bottom */
   background-image: linear-gradient(to top right, #7ed56f8f, #18c68c9c),
     url("../img/hero.jpg");
@@ -72,16 +75,16 @@ body {
   /* position: relative; */
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   /* rem is measured relative to the document's root font-sie */
   top: 4rem;
   left: 4rem;
 }
-.logo {
+.header__logo {
   height: 3.5rem;
 }
-.text-box {
+.header__text-box {
   position: absolute;
 
   /* these properties are for the parent element */
@@ -105,7 +108,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   font-weight: 400;
@@ -123,7 +126,7 @@ body {
   animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-size: 2rem;
   font-weight: 700;
@@ -215,7 +218,7 @@ it specifies the state of the selected element  */
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-.btn-white {
+.btn--white {
   background: #fff;
   color: #777;
 }
@@ -233,7 +236,7 @@ it specifies the state of the selected element  */
   transition: all 0.4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background-color: white;
 }
 
@@ -242,7 +245,7 @@ it specifies the state of the selected element  */
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
   animation-fill-mode: backwards;
 }

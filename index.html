@@ -15,20 +15,35 @@
     <title>Outdoorsy</title>
   </head>
   <body>
+    <!-- since header is independent block we can use the block element modifier 
+    to wrap it with by using the class name header with all the elements that included within it  -->
     <header class="header">
-      <div class="logo-box">
-        <img class="logo" src="./img/logo-white.png" alt="logo" />
+      <div class="header__logo-box">
+        <img
+          class="header__logo"
+          src="./img/logo-white.png"
+          alt="header__logo"
+        />
       </div>
 
-      <div class="text-box">
+      <div class="header__text-box">
+        <!--
+          heading-primary is standalone and this is why we are not including the class name header 
+          because we may needed in different page in case we want to make another page that would hold the same 
+          style as this one and we dont want to repeat ourselves by writing it again
+          so the heading-primary-main is modifier
+          -->
         <h1 class="heading-primary">
           <!-- since we need our heading to be 2 parts main and sub main 
-          we can use span to divide plus i want to make the main heading is one word  -->
+          we can use span to divide plus i want to make the main heading is one word 
+          -->
 
-          <span class="heading-primary-main">outdoors</span>
-          <span class="heading-primary-sub">is where life happens</span>
+          <!-- since these classes belongs to the modifier we are gonna use the -- -->
+          <span class="heading-primary--main">outdoors</span>
+          <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a class="btn btn-white btn-animated" href="#"> discover our tours</a>
+        <!-- this btn is standalone component and we may need its style throughout our project -->
+        <a class="btn btn--white btn--animated" href="#"> discover our tours</a>
       </div>
     </header>
   </body>
