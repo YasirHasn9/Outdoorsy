@@ -1,0 +1,22 @@
+{
+  "name": "outdoorsy",
+  "version": "1.0.0",
+  "description": "web application ",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/index.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YasirHasn9/Outdoorsy.git"
+  },
+  "author": "Yasir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YasirHasn9/Outdoorsy/issues"
+  },
+  "homepage": "https://github.com/YasirHasn9/Outdoorsy#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
