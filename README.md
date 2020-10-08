@@ -211,3 +211,23 @@ what feature that sass will provide for us ?
 using semicolon (;) in sass is important
 
 **_ ampersand = & _**
+
+the npm packages that we are using for the purpose of development which means that only used by developers are saved in the devDependencies which means theses are only tools for the development.
+
+# npm install packageName --save-dev
+
+notice that i have created a new file .gitignore. In this file we can include all the the files that we dont want to be on our repo on github
+
+how to compile sass ?
+in the package.json file , there is an object called "script" {
+inside here we can write the command that would compile sass into
+regular css code .
+
+here gonna write our command
+compile:sass: node-sass + the path of the file that we want to compile (input file (sass) ) + the path of the file that we want to go to the world and what the browser can read (output file (css))
+}
+
+# now how run sass on your machine so the browser can read?
+
+easy by just run the commend line the terminal
+**npm run compile:sass** Bum , enjoy it ;).
