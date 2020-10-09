@@ -2,6 +2,7 @@
 // notice we didnt use the _ because sass know what is there to choose
 @import "base/base";
 @import "abstract/variables";
+@import "base/animation";
 
 *,
 /* this will apply for pseudo elements */
@@ -158,47 +159,6 @@ first:
     we can use the @keyframes and inside it , we can use the percentage
     of px to play when to apply the animation
 */
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    /* the translate goes form the right to left on the X's */
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translate(1rem);
-  }
-  100% {
-    opacity: 1;
-    /* we give back to the original look */
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translate(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    /* because we want to move the bottom from down */
-    transform: translateY(3rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
 
 .btn {
   /* link is pseudo selector? is it just a keyword that add to the selected element after the: 
