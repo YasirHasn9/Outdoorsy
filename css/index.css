@@ -1,3 +1,13 @@
+/* there are 2 ways for doing animation in css 
+first:
+   we can use the transition property and then specify on which
+   property we want the animation 
+   
+
+   second: 
+    we can use the @keyframes and inside it , we can use the percentage
+    of px to play when to apply the animation
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -29,132 +39,9 @@
     opacity: 1;
     transform: translate(0); } }
 
-*,
-*::after,
-*::before {
-  /* * has (0,0,0,0) specificity which all other elements has precedence over it */
-  margin: 0;
-  padding: 0;
-  /* padding and border are no longer added to total width and height 
-  to the specified box module */
-  /* box-sizing: border-box; put in the body instead of here ? */
-  box-sizing: inherit;
-  /* this will inherit everything from the body  */ }
-
-html {
-  /* we are gonna convert px to relative rem values ?
-  because we need easy why to change all the measurement 
-  on our page with one simple sitting
-
-   */
-  /* we make it 10 px because now we know that 1 rem = 10px 
-   this is gonna make our life easier .plus, remember that the measure
-    of rem rely of the root's font-size. also if it was a 16px we would do 
-    a lot of calculation.
-   */
-  /* font-size: 10px; */
-  /* once you converted everything pixel to rem, go inspect the page and play with and you'll see the magic of rem */
-  font-size: 62.5%;
-  /* i converted to percentage to i wont give a headache to the 
-  client when they resize the screen. imagine if it was 10px so the client and even the browser will be stuck 
-  at it by giving it the 62.5% it makes more flexible 
-  10px/16px = 62.5% */ }
-
-body {
-  /* we are taking advantage of the inheritance
-    usually the properties that related to the font are inherit 
-    this is why are putting it in the body tag  */
-  font-family: Lato, "sans-serif";
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  /* we should take advantage of the inheritance
-   box-sizing: border-box; will include the padding and the border within the 
-   height and the width  */
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  width: 100%;
-  /* 
-  the linear-gradient goes on the top 
-  and the img goes on the bottom
-   */
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  /* it always try to fit the element inside the box */
-  background-size: cover;
-  /* when resize the img the top img still the same but the bottom of it gets
-  slightly chopped */
-  background-position: top;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0 100%);
-  /* position: relative; */ }
-  .header__logo-box {
-    position: absolute;
-    /* rem is measured relative to the document's root font-sie */
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    /* these properties are for the parent element */
-    top: 40%;
-    left: 50%;
-    /* translate is for the element itself  */
-    transform: translate(-50%, -50%);
-    text-align: center;
-    /* you can achieve to center everything into the text-box by using the flex box */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */ }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 2rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* animation */
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    /* animation-iteration-count: 2; determine hom times we want the animation what them to be */
-    /* animation-delay: 2s; how long we want the client wait for the animation to be rendered */
-    /* starts slower and ends faster  */
-    /* animation-timing-function: ease-in; */
-    /* starts faster and ends slower */
-    animation-timing-function: ease-out; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    margin-bottom: 2rem;
-    /* animation-name: moveInRight;
-    animation-duration: 3s; */
-    animation: moveInRight 1s ease-out;
-    /* determines the back part of the an element is visible or hidden */
-    /* backface-visibility: hidden; */ }
-
-/* there are 2 ways for doing animation in css 
-first:
-   we can use the transition property and then specify on which
-   property we want the animation 
-   
-
-   second: 
-    we can use the @keyframes and inside it , we can use the percentage
-    of px to play when to apply the animation
-*/
 .btn {
   /* link is pseudo selector? is it just a keyword that add to the selected element after the: 
-it specifies the state of the selected element  */ }
+  it specifies the state of the selected element  */ }
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -162,9 +49,9 @@ it specifies the state of the selected element  */ }
     display: inline-block;
     border-radius: 10rem;
     /* transition enables us to specify which property we want on 
-  the element to get it animated 
-  and sometimes the animation would be applied to every property so we choose all
-  */
+    the element to get it animated 
+    and sometimes the animation would be applied to every property so we choose all
+    */
     transition: all 0.2s;
     position: relative;
     margin-top: 2rem;
@@ -197,3 +84,116 @@ it specifies the state of the selected element  */ }
   .btn--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
     animation-fill-mode: backwards; }
+
+*,
+*::after,
+*::before {
+  /* * has (0,0,0,0) specificity which all other elements has precedence over it */
+  margin: 0;
+  padding: 0;
+  /* padding and border are no longer added to total width and height 
+  to the specified box module */
+  /* box-sizing: border-box; put in the body instead of here ? */
+  box-sizing: inherit;
+  /* this will inherit everything from the body  */ }
+
+html {
+  /* we are gonna convert px to relative rem values ?
+    because we need easy why to change all the measurement 
+    on our page with one simple sitting
+  
+     */
+  /* we make it 10 px because now we know that 1 rem = 10px 
+     this is gonna make our life easier .plus, remember that the measure
+      of rem rely of the root's font-size. also if it was a 16px we would do 
+      a lot of calculation.
+     */
+  /* font-size: 10px; */
+  /* once you converted everything pixel to rem, go inspect the page and play with and you'll see the magic of rem */
+  font-size: 62.5%;
+  /* i converted to percentage to i wont give a headache to the 
+    client when they resize the screen. imagine if it was 10px so the client and even the browser will be stuck 
+    at it by giving it the 62.5% it makes more flexible 
+    10px/16px = 62.5% */ }
+
+body {
+  /* we are taking advantage of the inheritance
+      usually the properties that related to the font are inherit 
+      this is why are putting it in the body tag  */
+  font-family: Lato, "sans-serif";
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /* we should take advantage of the inheritance
+     box-sizing: border-box; will include the padding and the border within the 
+     height and the width  */
+  box-sizing: border-box; }
+
+.header {
+  height: 95vh;
+  width: 100%;
+  /* 
+    the linear-gradient goes on the top 
+    and the img goes on the bottom
+     */
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  /* it always try to fit the element inside the box */
+  background-size: cover;
+  /* when resize the img the top img still the same but the bottom of it gets
+    slightly chopped */
+  background-position: top;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0 100%);
+  /* position: relative; */ }
+  .header__logo-box {
+    position: absolute;
+    /* rem is measured relative to the document's root font-sie */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    /* these properties are for the parent element */
+    top: 40%;
+    left: 50%;
+    /* translate is for the element itself  */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* you can achieve to center everything into the text-box by using the flex box */
+    /* display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; */ }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 2rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* animation */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* animation-iteration-count: 2; determine hom times we want the animation what them to be */
+    /* animation-delay: 2s; how long we want the client wait for the animation to be rendered */
+    /* starts slower and ends faster  */
+    /* animation-timing-function: ease-in; */
+    /* starts faster and ends slower */
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    margin-bottom: 2rem;
+    /* animation-name: moveInRight;
+      animation-duration: 3s; */
+    animation: moveInRight 1s ease-out;
+    /* determines the back part of the an element is visible or hidden */
+    /* backface-visibility: hidden; */ }

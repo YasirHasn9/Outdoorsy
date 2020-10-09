@@ -1,3 +1,14 @@
+/* there are 2 ways for doing animation in css 
+first:
+   we can use the transition property and then specify on which
+   property we want the animation 
+   
+
+   second: 
+    we can use the @keyframes and inside it , we can use the percentage
+    of px to play when to apply the animation
+*/
+
 @keyframes moveInLeft {
   0% {
     opacity: 0;
