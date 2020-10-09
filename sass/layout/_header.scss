@@ -1,3 +1,6 @@
+// header is not gonna be a component , it gonna be on every page.
+// this is we didn't include it in the component.
+// but if you like to consider it as a component that you are correct as .
 .header {
   height: 95vh;
   width: 100%;
@@ -53,41 +56,5 @@
       flex-direction: column;
       justify-content: center;
       align-items: center; */
-  }
-}
-
-.heading-primary {
-  color: $color-white;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 2rem;
-  &--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    /* animation */
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    /* animation-iteration-count: 2; determine hom times we want the animation what them to be */
-    /* animation-delay: 2s; how long we want the client wait for the animation to be rendered */
-
-    /* starts slower and ends faster  */
-    /* animation-timing-function: ease-in; */
-
-    /* starts faster and ends slower */
-    animation-timing-function: ease-out;
-  }
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.74rem;
-    margin-bottom: 2rem;
-    /* animation-name: moveInRight;
-      animation-duration: 3s; */
-    animation: moveInRight 1s ease-out;
-    /* determines the back part of the an element is visible or hidden */
-    /* backface-visibility: hidden; */
   }
 }
