@@ -1,0 +1,50 @@
+*,
+/* this will apply for pseudo elements */
+*::after,
+*::before {
+  /* * has (0,0,0,0) specificity which all other elements has precedence over it */
+  margin: 0;
+  padding: 0;
+  /* padding and border are no longer added to total width and height 
+  to the specified box module */
+  /* box-sizing: border-box; put in the body instead of here ? */
+  box-sizing: inherit;
+  /* this will inherit everything from the body  */
+}
+
+html {
+  /* we are gonna convert px to relative rem values ?
+    because we need easy why to change all the measurement 
+    on our page with one simple sitting
+  
+     */
+  /* we make it 10 px because now we know that 1 rem = 10px 
+     this is gonna make our life easier .plus, remember that the measure
+      of rem rely of the root's font-size. also if it was a 16px we would do 
+      a lot of calculation.
+     */
+  /* font-size: 10px; */
+  /* once you converted everything pixel to rem, go inspect the page and play with and you'll see the magic of rem */
+  font-size: 62.5%;
+  /* i converted to percentage to i wont give a headache to the 
+    client when they resize the screen. imagine if it was 10px so the client and even the browser will be stuck 
+    at it by giving it the 62.5% it makes more flexible 
+    10px/16px = 62.5% */
+}
+
+body {
+  /* we are taking advantage of the inheritance
+      usually the properties that related to the font are inherit 
+      this is why are putting it in the body tag  */
+  font-family: Lato, "sans-serif";
+  font-weight: 400;
+
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-gray-dark;
+  padding: 3rem /* it was 30px*/;
+  /* we should take advantage of the inheritance
+     box-sizing: border-box; will include the padding and the border within the 
+     height and the width  */
+  box-sizing: border-box;
+}
