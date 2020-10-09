@@ -5,6 +5,9 @@
 $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
+$color-gray-dark: #777;
+$color-white: #fff;
+$color-black: #000;
 
 *,
 /* this will apply for pseudo elements */
@@ -21,7 +24,7 @@ $color-primary-dark: #28b485;
 }
 
 html {
-  /* we are gonna convert px to relative rem v alues ?
+  /* we are gonna convert px to relative rem values ?
   because we need easy why to change all the measurement 
   on our page with one simple sitting
 
@@ -49,7 +52,7 @@ body {
 
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
+  color: $color-gray-dark;
   padding: 3rem /* it was 30px*/;
   /* we should take advantage of the inheritance
    box-sizing: border-box; will include the padding and the border within the 
@@ -86,70 +89,69 @@ body {
     /*bottom right*/ 0 100%
   );
   /* position: relative; */
-}
+  //   & the ampersand is equal to whatever is the parent
+  //   in our case here & = .header
+  &__logo-box {
+    position: absolute;
+    /* rem is measured relative to the document's root font-sie */
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    height: 3.5rem;
+  }
+  &__text-box {
+    position: absolute;
 
-.header__logo-box {
-  position: absolute;
-  /* rem is measured relative to the document's root font-sie */
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
+    /* these properties are for the parent element */
+    top: 40%;
+    left: 50%;
+    /* translate is for the element itself  */
+    transform: translate(-50%, -50%);
+    text-align: center;
 
-  /* these properties are for the parent element */
-  top: 40%;
-  left: 50%;
-  /* translate is for the element itself  */
-  transform: translate(-50%, -50%);
-  text-align: center;
-
-  /* you can achieve to center everything into the text-box by using the flex box */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+    /* you can achieve to center everything into the text-box by using the flex box */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+  }
 }
 
 .heading-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 2rem;
-}
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* animation */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* animation-iteration-count: 2; determine hom times we want the animation what them to be */
+    /* animation-delay: 2s; how long we want the client wait for the animation to be rendered */
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /* animation */
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* animation-iteration-count: 2; determine hom times we want the animation what them to be */
-  /* animation-delay: 2s; how long we want the client wait for the animation to be rendered */
+    /* starts slower and ends faster  */
+    /* animation-timing-function: ease-in; */
 
-  /* starts slower and ends faster  */
-  /* animation-timing-function: ease-in; */
-
-  /* starts faster and ends slower */
-  animation-timing-function: ease-out;
-}
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.74rem;
-  margin-bottom: 2rem;
-  /* animation-name: moveInRight;
-  animation-duration: 3s; */
-  animation: moveInRight 1s ease-out;
-  /* determines the back part of the an element is visible or hidden */
-  /* backface-visibility: hidden; */
+    /* starts faster and ends slower */
+    animation-timing-function: ease-out;
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+    margin-bottom: 2rem;
+    /* animation-name: moveInRight;
+    animation-duration: 3s; */
+    animation: moveInRight 1s ease-out;
+    /* determines the back part of the an element is visible or hidden */
+    /* backface-visibility: hidden; */
+  }
 }
 
 /* there are 2 ways for doing animation in css 
@@ -204,61 +206,62 @@ first:
   }
 }
 
-/* link is pseudo selector? is it just a keyword that add to the selected element after the: 
+.btn {
+  /* link is pseudo selector? is it just a keyword that add to the selected element after the: 
 it specifies the state of the selected element  */
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-  margin-top: 2rem;
-  font-size: 1.6rem;
-
-  /* transition enables us to specify which property we want the element to have been animated 
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* transition enables us to specify which property we want on 
+  the element to get it animated 
   and sometimes the animation would be applied to every property so we choose all
   */
-}
+    transition: all 0.2s;
+    position: relative;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+  }
 
-.btn:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-.btn--white {
-  background: #fff;
-  color: #777;
-}
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.5) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
 
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
+  &--white {
+    background: $color-white;
+    color: $color-gray-dark;
+    &::after {
+      background-color: $color-white;
+    }
+  }
 
-.btn--white::after {
-  background-color: white;
-}
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn--animated {
-  animation: moveInBottom 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+  }
 }

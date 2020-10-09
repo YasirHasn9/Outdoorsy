@@ -231,3 +231,8 @@ compile:sass: node-sass + the path of the file that we want to compile (input fi
 
 easy by just run the commend line the terminal
 **npm run compile:sass** Bum , enjoy it ;).
+
+Engineers don't like to repeat what can be done once because either we are lazy or we consider it not practical. In sass when we update something we need to tell the compiler to compile it but this would be so tedious for us to do so , i mean every time ? come on. in package.json file under the same script object we can write something called a flag indicates the compiler to update itself every time we make some changes to our sass files
+"script" {
+compile:sass: pathInputFile pathOutputFile -w  
+}
