@@ -236,3 +236,16 @@ Engineers don't like to repeat what can be done once because either we are lazy 
 "script" {
 compile:sass: pathInputFile pathOutputFile -w  
 }
+
+# Basic principle of responsive design and layout Types
+
+there are 3 basic principle of responsive design
+
+1. Fluid grids and layout ?
+   to allow content to adapt to the current viewpoint width used the browser website. uses % rather that px.
+
+2. flexible and responsive images .
+   images behave differently than text content and this is why we always recommend using % with the width and height rather than px , so they can adapt the viewport. also they do not scale automatically. in terms of mage bite , images are the biggest in the whole website.
+
+3. media queries
+   basically they allowed us to adjust the element on certain width of the viewport. media queries made of breakpoint , at each point there is specific width and on that width there special style for the content so they don't run out of the screen and one element bigger that the other .. etc.
