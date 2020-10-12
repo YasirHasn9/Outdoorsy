@@ -26,6 +26,7 @@ html {
      */
   /* font-size: 10px; */
   /* once you converted everything pixel to rem, go inspect the page and play with and you'll see the magic of rem */
+  // this define 1rem
   font-size: 62.5%;
   /* i converted to percentage to i wont give a headache to the 
     client when they resize the screen. imagine if it was 10px so the client and even the browser will be stuck 

@@ -1,8 +1,18 @@
 // variables : we can use them wherever we want by just use t
 // the name that we are giving to them
+// in the future if we wanna change some colors or width or size ?
+//  we dont need to search all the files , we come here to change the values.
+
+// colors
 $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
 $color-gray-dark: #777;
 $color-white: #fff;
 $color-black: #000;
+
+// grid
+$grid-width: 114rem;
+// gutter is space between columns of the grid
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
