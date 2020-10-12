@@ -9,9 +9,31 @@
   // check the main readme , i wrote about the difference between width and max-width
   background-color: #eee;
   margin: 0 auto; // to center block element inside another element
-  margin-bottom: $gutter-vertical;
-  &:last-child {
-    margin-bottom: 0px;
+
+  // &:last-child {
+  //   // this style applies only for the last children
+  //   margin-bottom: $gutter-vertical;
+  // }
+  // or you can use this
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+  @include clearfix;
+
+  // work on the columns
+  .col-1-of-2 {
+    // this operation allows us to do four math operation + , - , * , /
+    // even you can mix units here like percentage and pixels,
+
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    // use can use the flex-box
+    // because all the children will float to the left the row is now zero
+    // height
+    float: left;
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
   }
 }
 
