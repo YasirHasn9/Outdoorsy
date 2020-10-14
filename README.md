@@ -36,6 +36,9 @@ it magic ;).
 
 1. headlines.
    most of the web pages have titles, so to represent a title on a web we use a tag headline <h1></h1>. however, there are 6 types of headlines; <h1> <h2> <h3> <h4> <h5> and <h6>. each one of them is visually different form the other. It depends where and how we would use them ?
+   **_ note _**
+   We should use the level of headline that makes sense, based on the semantic meaning of content.
+   Content works best when markup follows meaning.
 
 2. bold and italic.
    there are 2 tags for bold and  
@@ -59,6 +62,8 @@ seriousness , urgency , importance
 
 <b> bold content </b>
 generic, natural
+**_ note _**
+this would help the browser to recognize what's what when writing articles and also when using grammar and this would help screen readers
 
 # Lists
 
@@ -106,11 +111,36 @@ html
 browser
 item
 description of the item
+**_ note _**
+Lists can be used to markup navigation.
+While lists are normally used to present content, their structured and nestable semantics also make them good for navigation menus.
 
-this would help the browser to recognize what's what when writing articles and also when using grammar and this would help screen readers
+# code
 
+sometime we want to indicate the reader this is a code block , we can do this by using the code tag
+<code> {color:red} </code> and its inline by default
+**_ note _**
+
+<pre> and <code>
+The <pre> element is used for listings where line breaks and other white space need to be preserved, while <code> is more for short snippets inside of other content.
+
+# time
+<time datetime="2025-10-08">October 8, 2025</time>
+Even when you're presenting a date, you should use the <time> element, with the datetime attribute specifying the formal date.
+
+# quote
+<blockquote> is a block-level element, while the <q> element is inline, nested inside another block-level element.
+If you want to highlight a short quote, <q> is great to use inside of a paragraph or other block-level element. <blockquote> is for when you want something bigger, to really stand out.
+
+
+
+# attributes 
+there many attributes and they are 4 important global ones
+1. class
+2. id
+3. dir --> direction
+4. lang --> language
 # what happens when the user opens a page in the browser ?
-
 The browser will load the html and than parse it. Then the browser builds the DOM (Document object model)
 that represents the look of our website. when the browser parse the html at that point , it will load the css.
 after loading the css it will parse as well . parsing css is kinda more complex that than the html. parsing css requires
