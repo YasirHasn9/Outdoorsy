@@ -1,7 +1,146 @@
 # Outdoorsy
 
-# what happens when the user opens a page in the browser ?
+outdoorsy is a small project where i explain html and css/sass as much as i can
+where i want benefit other developers by benefit myself ;]
 
+# Browser
+
+there are three main language to build a web that we can interact with on the browser ; html , css, and js
+**_ note _**
+im going to talk about js in details in different project
+
+# HTML
+
+html stands for hyper text markup language.
+html is the solid foundation of the content of everything is built.
+it is designed in way that can be worked with all kind of browser and this is why
+it is invented in the first place because it allows for people to share content
+even tho that we have different type of computers.
+so the html defines the content on a site
+html is declarative language like hey this is <p> tag , this <img> ...etc
+
+Browser is extremely forgiving when html is broken because there is a bug in code
+the browser guesses what meant. Browsers are built on understanding that things can go wrong and this is why they are extremely forgiving
+
+to markup some content properly, then we have to use opening and closing tag.
+one of the easiest mistakes can be done through coding the content of the html is forgetting the closing tag and this ehy a lot of editors suggest for you the closing tag because believe me is so forgettable.
+
+<tag> content </tag> == element ; the whole thing called element
+
+html element tags can be nested inside each other. in fact the whole html document is bunch of tags nested inside each others creating a tree or as known the DOM (document object model).
+
+what is DOM ?
+it magic ;).
+
+# now let's talk about some widely used tags ?
+
+1. headlines.
+   most of the web pages have titles, so to represent a title on a web we use a tag headline <h1></h1>. however, there are 6 types of headlines; <h1> <h2> <h3> <h4> <h5> and <h6>. each one of them is visually different form the other. It depends where and how we would use them ?
+   **_ note _**
+   We should use the level of headline that makes sense, based on the semantic meaning of content.
+   Content works best when markup follows meaning.
+
+2. bold and italic.
+   there are 2 tags for bold and  
+    2 tags for italic, but why ?
+
+# italic
+
+<i> italic text </i>
+visual italic
+this is just telling the browser it italic the text but don't emphasize it.
+
+<em> emphasize text </em>
+important emphasis
+telling the browser be more emphasize on this text, loader than <i>
+telling that we are making a point. we want the browser to know when verbily emphasized text and visually
+
+# bold
+
+<strong> strong bold content </strong>
+seriousness , urgency , importance
+
+<b> bold content </b>
+generic, natural
+**_ note _**
+this would help the browser to recognize what's what when writing articles and also when using grammar and this would help screen readers
+
+# Lists
+
+there are 3 types of lists
+
+1. ordered lists
+html
+<ol> 
+  <li>item1</li>
+  <li>item2</li>
+  <li>item3</li>
+</ol>
+
+browser
+
+1. item1
+2. item2
+3. item3
+
+4. unordered lists
+html
+<ul>
+   <li> item1 </li>
+   <li> item2 </li>
+   <li> item3 </li>
+</ul>
+
+browser
+. item1
+. item2
+. item3
+
+3. definition lists
+   in case we want a description for the item
+
+html
+
+<dt> definition term
+<dd> definition description
+<dl>
+  <dt> item </dt>
+  <dd> description of the item </dd>
+</dl>
+
+browser
+item
+description of the item
+**_ note _**
+Lists can be used to markup navigation.
+While lists are normally used to present content, their structured and nestable semantics also make them good for navigation menus.
+
+# code
+
+sometime we want to indicate the reader this is a code block , we can do this by using the code tag
+<code> {color:red} </code> and its inline by default
+**_ note _**
+
+<pre> and <code>
+The <pre> element is used for listings where line breaks and other white space need to be preserved, while <code> is more for short snippets inside of other content.
+
+# time
+<time datetime="2025-10-08">October 8, 2025</time>
+Even when you're presenting a date, you should use the <time> element, with the datetime attribute specifying the formal date.
+
+# quote
+<blockquote> is a block-level element, while the <q> element is inline, nested inside another block-level element.
+If you want to highlight a short quote, <q> is great to use inside of a paragraph or other block-level element. <blockquote> is for when you want something bigger, to really stand out.
+
+
+
+# attributes 
+there many attributes and they are 4 important global ones
+1. class
+2. id
+3. dir --> direction
+4. lang --> language
+# what happens when the user opens a page in the browser ?
 The browser will load the html and than parse it. Then the browser builds the DOM (Document object model)
 that represents the look of our website. when the browser parse the html at that point , it will load the css.
 after loading the css it will parse as well . parsing css is kinda more complex that than the html. parsing css requires
@@ -244,8 +383,42 @@ there are 3 basic principle of responsive design
 1. Fluid grids and layout ?
    to allow content to adapt to the current viewpoint width used the browser website. uses % rather that px.
 
+   simply put several boxes side by side using floating
+
 2. flexible and responsive images .
    images behave differently than text content and this is why we always recommend using % with the width and height rather than px , so they can adapt the viewport. also they do not scale automatically. in terms of mage bite , images are the biggest in the whole website.
 
 3. media queries
    basically they allowed us to adjust the element on certain width of the viewport. media queries made of breakpoint , at each point there is specific width and on that width there special style for the content so they don't run out of the screen and one element bigger that the other .. etc.
+
+# what is the difference between width and max-width?
+
+some html tags by default are block-level element, like what ? it means if we only coded <div></div> , this div will stretch over the whole
+size of whatever the parent's width. for instance, the image takes all the space can get for the parent. so if you try to put an image into parent's width of 200 px , it would naturally takes up all the space unless we specify different width and height, but what if we do not specify and the image
+is larger than the parent's width ? it would exceed the parent's width , ohhhhh :] this is ugly , I know. And more than that the browser would add horizontal scrolling , simply ugly. to take control of the this situation , we need to use fixed values
+
+img {
+width: 500px // it means the width of the img would remain the same under any circumstances. But what if the browser window on some devices
+is less the 500px ? ugly
+}
+
+# go back of taking control.
+
+css has a power property called max-width that would make your life easier than before because it gives control and yes , sweetheart , we like it .
+this is how i imagine what is happening between the max-width and the browser.
+
+Hey Browser,
+
+This is your beloved friend css , i would like to to introduce you to one of my children , called max-width.
+kindly, do not exceed whatever width it is giving you. But since we are old friends, you are so free to go less than the width
+that max-width if necessary.
+
+img {
+width:100%; this says the image should take the whole width of the parent's width
+max-width:700px; this says the image should never exceed this fixed 700px but the image can go less than this.
+}
+
+# now we have 2 conditions
+
+if width > max-width; browser uses max-width
+if width < max-width; browser uses width

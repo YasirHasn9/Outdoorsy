@@ -1,9 +1,19 @@
+<!-- there are several keys that every web page must have  -->
+<!-- !DOCTYPE declares to the browser which era is this file from because there are other doc declarations in the past but now we want you to use the modern doc type  -->
 <!DOCTYPE html>
+
+<!-- lang is universal attribute which you can use it on every element, to tell which language this page is using -->
 <html lang="en">
+
+<!-- in head we put all the meta data and information that the browser needs to know and will not be display on the page -->
   <head>
     <meta charset="UTF-8" />
     <!-- meta tag provide metadata about the html doc , explain what kind of data are we dealing with 
     it's not gonna display it for the machine-->
+
+    <!-- the metadata is only gonna be inside the head 
+      and it conveys data about the page
+     -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
@@ -12,9 +22,12 @@
     />
     <link rel="stylesheet" href="vendores/css/ionicons.min.css" />
     <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- this is a title for the name of the page that the user will see when they go to visit  -->
     <title>Outdoorsy</title>
   </head>
   <body>
+    <!-- here what we see on the page -->
     <!-- since header is independent block we can use the block element modifier 
     to wrap it with by using the class name header with all the elements that included within it  -->
     <header class="header">
@@ -46,5 +59,60 @@
         <a class="btn btn--white btn--animated" href="#"> discover our tours</a>
       </div>
     </header>
+
+    <!-- this is for test purposing to the show the power of 
+    grid system. -->
+    <!-- <section class="grid-test">
+      <div class="row">
+        <div class="col-1-of-2">col 1 of 2</div>
+        <div class="col-1-of-2">col 1 of 2</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-3">col 1 of 3</div>
+        <div class="col-1-of-3">col 1 of 32222</div>
+        <div class="col-1-of-3">col 1 of 33333</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-3">col 1 of 3</div>
+        <div class="col-2-of-3">col 2 of 3</div>
+      </div>
+      <div class="row">
+        <div class="col-1-of-4">col 1 of 4</div>
+        <div class="col-1-of-4">col 1 of 4</div>
+        <div class="col-1-of-4">col 1 of 4</div>
+        <div class="col-1-of-4">col 1 of 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">col 1 of 4</div>
+        <div class="col-1-of-4">col 1 of 4</div>
+        <div class="col-2-of-4">col 2 of 4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-4">col 1 of 4</div>
+        <div class="col-3-of-4">col 3 of 4</div>
+      </div>
+    </section> -->
+
+    <main>
+      <!-- here we are telling the engine  or screen readers 
+      that this is the main of our main part
+    -->
+
+      <section class="section-about">
+        <div class="u-center-text u-margin-bottom-8">
+          <h2 class="heading-secondary">exiting tours for adventurous people</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-1-of-2">
+          </div>
+          <div class="col-1-of-2">2</div>
+        </div>
+        
+    </main>
   </body>
 </html>
