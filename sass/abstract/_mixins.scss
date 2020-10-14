@@ -1,0 +1,15 @@
+// how to write a mixin
+//  1. use keyword @mixin
+//  2. the name of mixin
+//  3. the mixin takes optional arguments
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    // to clear both floats , we use the (both) value
+    clear: both;
+  }
+}
+
+// since we are import the mixins file in the main
+// file now all we need is to include them wherever we want

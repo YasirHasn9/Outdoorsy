@@ -244,8 +244,42 @@ there are 3 basic principle of responsive design
 1. Fluid grids and layout ?
    to allow content to adapt to the current viewpoint width used the browser website. uses % rather that px.
 
+   simply put several boxes side by side using floating
+
 2. flexible and responsive images .
    images behave differently than text content and this is why we always recommend using % with the width and height rather than px , so they can adapt the viewport. also they do not scale automatically. in terms of mage bite , images are the biggest in the whole website.
 
 3. media queries
    basically they allowed us to adjust the element on certain width of the viewport. media queries made of breakpoint , at each point there is specific width and on that width there special style for the content so they don't run out of the screen and one element bigger that the other .. etc.
+
+# what is the difference between width and max-width?
+
+some html tags by default are block-level element, like what ? it means if we only coded <div></div> , this div will stretch over the whole
+size of whatever the parent's width. for instance, the image takes all the space can get for the parent. so if you try to put an image into parent's width of 200 px , it would naturally takes up all the space unless we specify different width and height, but what if we do not specify and the image
+is larger than the parent's width ? it would exceed the parent's width , ohhhhh :] this is ugly , I know. And more than that the browser would add horizontal scrolling , simply ugly. to take control of the this situation , we need to use fixed values
+
+img {
+width: 500px // it means the width of the img would remain the same under any circumstances. But what if the browser window on some devices
+is less the 500px ? ugly
+}
+
+# go back of taking control.
+
+css has a power property called max-width that would make your life easier than before because it gives control and yes , sweetheart , we like it .
+this is how i imagine what is happening between the max-width and the browser.
+
+Hey Browser,
+
+This is your beloved friend css , i would like to to introduce you to one of my children , called max-width.
+kindly, do not exceed whatever width it is giving you. But since we are old friends, you are so free to go less than the width
+that max-width if necessary.
+
+img {
+width:100%; this says the image should take the whole width of the parent's width
+max-width:700px; this says the image should never exceed this fixed 700px but the image can go less than this.
+}
+
+# now we have 2 conditions
+
+if width > max-width; browser uses max-width
+if width < max-width; browser uses width
