@@ -60,3 +60,32 @@
     animation-fill-mode: backwards;
   }
 }
+
+.btn-text {
+  &:link,
+  &:visited {
+    color: $color-primary;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 0.1rem solid $color-primary;
+    padding: 0.3rem;
+    font-size: $default-font-size;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    transition: all 0.2s;
+    letter-spacing: 0.2rem;
+    border-radius: 2rem;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0px 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
+
+  &:active {
+    box-shadow: 0px 0.5rem 1rem rgba($color-black, 0.15);
+    transform: translateY(0);
+  }
+}
