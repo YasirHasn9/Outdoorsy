@@ -1,10 +1,28 @@
-// since we have only one main section so home.scss is a good place to start with
 .section-about {
   background-color: $color-gray-light-1;
-  padding: 25rem 0;
-  // remember that we set the height of the header to 95vh
-  // and now we want make the main connected to where we left it
-  // and this is why we trying to left it up
-
+  padding: 30rem 0;
   margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/nat-4.jpg");
+  background-size: cover;
+
+  // clip-path: polygon(0% 15%, 100% 0%, 100vw 50vh, 0 100%);
+  margin-top: -12rem;
+  transform: skewY(-7deg);
+  // we can adjust the boxes inside this section to the opposite of the skew here and
+  // make them going back to normal but what if we want to put other boxes in the future.
+
+  // so here we are gonna select everything in this section by using a direct selector
+  //  & > *  = select everything
+  & > * {
+    transform: skewY(7deg);
+  }
 }
