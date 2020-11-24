@@ -15,7 +15,7 @@
   background-size: cover;
 
   // clip-path: polygon(0% 15%, 100% 0%, 100vw 50vh, 0 100%);
-  margin-top: -15rem;
+  margin-top: -12rem;
   transform: skewY(-7deg);
   // we can adjust the boxes inside this section to the opposite of the skew here and
   // make them going back to normal but what if we want to put other boxes in the future.
@@ -25,4 +25,10 @@
   & > * {
     transform: skewY(7deg);
   }
+}
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 40rem 0;
+  margin-top: -11.5rem;
 }

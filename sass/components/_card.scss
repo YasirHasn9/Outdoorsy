@@ -1,0 +1,43 @@
+.card {
+  // this property gives a 3D-positioned between the user and the z=0 plan and the user
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 50rem;
+  position: relative;
+  &__side {
+    font-size: 2rem;
+    height: 50rem;
+    transition: all 0.8s ease;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+
+    &--front {
+      background-color: $color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+    }
+  }
+
+  //   which means when we hover over the card itself, it would makes the __side have this properties
+  &:hover &__side--front {
+    //to work with perspective you have to define it in the parent
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back {
+    //to work with perspective you have to define it in the parent
+    transform: rotateY(0);
+  }
+}
