@@ -1,19 +1,20 @@
 // since we are converting to sass now we can use its feature here
 // notice we didnt use the _ because sass know what is there to choose
-@import "abstract/variables";
-@import "abstract/mixins";
+@import 'abstract/variables';
+@import 'abstract/mixins';
 
-@import "base/animation";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import 'base/animation';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
 
-@import "components/button";
-@import "components/composition.scss";
-@import "components/feature-box";
-@import "components/card";
+@import 'components/button';
+@import 'components/composition.scss';
+@import 'components/feature-box';
+@import 'components/card';
 
-@import "layout/header";
-@import "layout/grid";
+@import 'layout/header';
+@import 'layout/navigation.scss';
+@import 'layout/grid';
 
-@import "pages/home";
+@import 'pages/home';

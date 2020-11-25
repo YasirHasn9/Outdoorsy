@@ -38,7 +38,7 @@ body {
   /* we are taking advantage of the inheritance
       usually the properties that related to the font are inherit 
       this is why are putting it in the body tag  */
-  font-family: Lato, "sans-serif";
+  font-family: Lato, 'sans-serif';
   font-weight: 400;
 
   /* font-size: 16px; */
@@ -49,4 +49,7 @@ body {
      box-sizing: border-box; will include the padding and the border within the 
      height and the width  */
   box-sizing: border-box;
+}
+a {
+  text-decoration: none !important;
 }
